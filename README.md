@@ -1,6 +1,6 @@
 # Access Pages for Home Assistant
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.123 beta**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using LayerV qURL/NHP. A LayerV account and dedicated management API key are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.124 beta**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using LayerV qURL/NHP. A LayerV account and dedicated management API key are required.
 
 Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → App store → Repositories** in Home Assistant, then install **Access Pages**. The App supports Home Assistant OS and Supervised installations.
 
@@ -9,4 +9,4 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned production image `ghcr.io/azdane/access-pages-app:0.1.123`.
+The App uses the versioned beta image `ghcr.io/azdane/access-pages-app:0.1.124`.
