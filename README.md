@@ -1,8 +1,10 @@
 # Access Pages for Home Assistant
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.131**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using LayerV qURL/NHP. A LayerV account and dedicated management API key are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.132**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using LayerV qURL/NHP. A LayerV account and dedicated management API key are required.
 
-**0.1.131 upgrades to qURL CLI 3.0.0 with LayerV Connector 0.14.1.** It retains account-based onboarding, explicit Agent enrollment, sealed credentials, external supervision and per-share isolation. Daemon health checks now verify process ownership, startup/shutdown handle the new lifetime lock, and the packaged CA trust store is checked for verified tunnel TLS. Saved Access Pages, Home Assistant settings, administrator configuration and Connector identity are preserved. No guest-link migration or automatic identity reset is introduced.
+**0.1.132 starts with only the Light category enabled** (`include_domains: "light"`), including when a saved setting is empty. Explicitly add other Home Assistant domains before selecting their entities for guest pages. Area filters narrow the enabled domains and cannot enable other categories. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
+
+Existing saved pages and guest access remain intact. Before saving an existing page again, enable its non-light domains or remove those controls. This release retains qURL CLI 3.0.0 with LayerV Connector 0.14.1, saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
 Back up the App and stop the old version completely before updating through Home Assistant. Existing guest links have no compatibility guarantee; revoke unwanted guests through the normal controls, allow durable remote cleanup to finish, and create new invitations as needed. Do not delete the ownership lock or reset the account/Connector merely to upgrade. Follow the [installation and recovery instructions](access_pages/DOCS.md#upgrading-to-qurl-300).
 
@@ -19,4 +21,4 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.131`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.131 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.131).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.132`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.132 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.132).
