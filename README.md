@@ -221,6 +221,10 @@ The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.134`. This
 
 ## License and branding
 
+Access Pages LLC owns the founder-owned Access Pages intellectual property
+assigned to it by John Raahauge. Third-party and contributor-owned material
+remains subject to its existing ownership and licenses.
+
 The Access Pages Gateway source code is licensed under the MIT License.
 
 The MIT License also covers the Gateway documentation. The App icon and logo
