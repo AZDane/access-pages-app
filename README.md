@@ -141,12 +141,12 @@ Access Pages cannot determine whether an entity or action is safe for
 guest use. Owners must review what each entity actually controls, the
 actions they expose, and whether the available protections are appropriate.
 
-The App defaults to `include_domains: "light"`, enabling only the Light
-category. The owner must explicitly enable additional supported categories
-in this setting before selecting them for guest pages. This is a
-conservative configuration default, not a guarantee that any entity is safe.
-Entity categories are configuration aids, not safety classifications;
-even a `light` entity is not inherently safe.
+The App defaults to
+`include_domains: "light,switch,fan,media_player,climate,vacuum,sensor"`.
+Edit this setting to choose domains, or leave it empty to allow all domains,
+subject to other configured filters and exclusions. Entity categories are
+configuration aids, not safety classifications; even a `light` entity is
+not inherently safe.
 
 Treat qURLs as access credentials. Once a qURL is provided for sharing,
 Access Pages cannot control how an owner or guest stores, transmits,
@@ -194,13 +194,13 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.135**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.136**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
-**Only the Light category is enabled by default** (`include_domains: "light"`), including when a saved setting is empty. Explicitly add other Home Assistant domains before selecting their entities for guest pages. Area filters narrow the enabled domains and cannot enable other categories. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
+The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Version 0.1.135 updates project copyright and ownership attribution to Access Pages LLC and includes the previously merged Python base-image refresh and Debian Perl security fix. No application functionality changes. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
+Version 0.1.136 fixes empty domain lists being reset to `light` and expands the default domains for new installations and missing settings. Existing explicitly configured domain lists remain in effect. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
 
-Existing saved pages and guest access remain intact. Before saving an existing page again, enable its non-light domains or remove those controls. This release retains qURL CLI 3.0.0 with [LayerV](https://layerv.ai) Connector 0.14.1, saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
+Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release retains qURL CLI 3.0.0 with [LayerV](https://layerv.ai) Connector 0.14.1, saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
 Back up the App and stop the old version completely before updating through Home Assistant. Existing guest links have no compatibility guarantee; revoke unwanted guests through the normal controls, allow durable remote cleanup to finish, and create new invitations as needed. Do not delete the ownership lock or reset the account/Connector merely to upgrade. Follow the [installation and recovery instructions](access_pages/DOCS.md#upgrading-to-qurl-300).
 
@@ -217,7 +217,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.135`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.135 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.135).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.136`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.136 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.136).
 
 ## License and branding
 
