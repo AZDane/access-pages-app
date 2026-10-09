@@ -194,11 +194,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.136**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.137**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Version 0.1.136 fixes empty domain lists being reset to `light` and expands the default domains for new installations and missing settings. Existing explicitly configured domain lists remain in effect. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
+Version 0.1.137 fixes Home Assistant restoring the default domain list when Included domains is cleared and saved in the configuration form. After updating, clear the field, save, and restart the App to allow all domains, subject to other configured filters and exclusions. Existing explicitly configured domain lists remain in effect. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
 
 Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release retains qURL CLI 3.0.0 with [LayerV](https://layerv.ai) Connector 0.14.1, saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
@@ -217,7 +217,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.136`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.136 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.136).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.137`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.137 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.137).
 
 ## License and branding
 
