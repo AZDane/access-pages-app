@@ -13,7 +13,7 @@ opened.
 [LayerV setup](access_pages/DOCS.md#set-up-layerv) ·
 [Owner responsibility](#owner-responsibility) ·
 [Configuration](access_pages/DOCS.md#configuration-reference) ·
-[Upgrading and recovery](access_pages/DOCS.md#upgrading-to-qurl-300) ·
+[Upgrading and recovery](access_pages/DOCS.md#security-update-in-app-01138) ·
 [Current release](#installation-and-current-release) ·
 [Changelog](access_pages/CHANGELOG.md)
 
@@ -194,15 +194,15 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.137**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.138**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Version 0.1.137 fixes Home Assistant restoring the default domain list when Included domains is cleared and saved in the configuration form. After updating, clear the field, save, and restart the App to allow all domains, subject to other configured filters and exclusions. Existing explicitly configured domain lists remain in effect. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
+Version 0.1.138 updates qURL and the Go guest endpoint to fix CVE-2026-78667, CVE-2026-78669, and CVE-2026-97031. The bundled qURL uses Go 1.26.9 and golang.org/x/net 0.60.0; the guest endpoint uses Go 1.27.2. Resource visibility, external supervision, and sealed Agent identity are preserved. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
 
-Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release retains qURL CLI 3.0.0 with [LayerV](https://layerv.ai) Connector 0.14.1, saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
+Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release packages qURL CLI 3.5.0 with [LayerV](https://layerv.ai) Connector 0.14.2 and retains saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
-Back up the App and stop the old version completely before updating through Home Assistant. Existing guest links have no compatibility guarantee; revoke unwanted guests through the normal controls, allow durable remote cleanup to finish, and create new invitations as needed. Do not delete the ownership lock or reset the account/Connector merely to upgrade. Follow the [installation and recovery instructions](access_pages/DOCS.md#upgrading-to-qurl-300).
+Back up the App and stop the old version completely before updating through Home Assistant. Existing guest links have no compatibility guarantee; revoke unwanted guests through the normal controls, allow durable remote cleanup to finish, and create new invitations as needed. Do not delete the ownership lock or reset the account/Connector merely to upgrade. Follow the [installation and recovery instructions](access_pages/DOCS.md#security-update-in-app-01138).
 
 All required source checks and AMD64/ARM64 build and runtime probes passed. Live Home Assistant/[LayerV](https://layerv.ai) and phone acceptance remain unperformed; publication does not mean those checks have passed. With temporary diagnostic capture Off, verify fresh guest publication, a harmless action followed by fresh state, expiry, individual/bulk revocation, warm restart and mobile/network reconnect using disposable guests. Check the target appliance's AppArmor audit logs. The historical timeout is not claimed resolved.
 
@@ -217,7 +217,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.137`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.137 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.137).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.138`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.138 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.138).
 
 ## License and branding
 
