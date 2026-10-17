@@ -197,11 +197,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.139**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.140**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Version 0.1.139 adds safe diagnostics for guest-link publishing failures and lists the required LayerV API-key checkboxes in Getting started. Connector exit 8 now distinguishes known enrollment, recovery, resource-request, and API validation failures when that information is available. The same safe message appears in the Home Assistant App log as a `connector_operation_failed` event. This improves troubleshooting; it does not claim to resolve the reported upstream publish rejection. The security updates from 0.1.138 remain included. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
+Version 0.1.140 restores new-page and new-guest publication on LayerV deployments that reject the Connector's newer resource privacy field. It includes a narrowly scoped compatibility build of qURL 3.5.0, retaining its security dependencies and verifying resource identity before serving. Existing guest protections remain in place. No connection reset is required for the update. Validate new-page creation and guest access on a test instance before updating a working primary installation. Cold App backups remain supported; the App stops briefly during a backup and restarts afterward.
 
 Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release packages qURL CLI 3.5.0 with [LayerV](https://layerv.ai) Connector 0.14.2 and retains saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
@@ -220,7 +220,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.139`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.139 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.139).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.140`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.140 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.140).
 
 ## License and branding
 
