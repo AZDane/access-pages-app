@@ -197,11 +197,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.149**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.151**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Maintenance beta 0.1.149 fixes "Setup required: Unsafe HA guest session directory" after restoring a Home Assistant backup with changed file ownership or permissions. Startup repairs the guest-session directory, database and SQLite sidecars while preserving their contents and rejecting symbolic links and special files. It also applies Debian's APT 3.0.4 security update for CVE-2026-109518. Both architecture images are validated before publishing those exact artifacts with SBOMs, provenance and Cosign signing. Complete vulnerability reports remain visible; the existing bounded SQLite and qURL/go-jose assessments were revalidated for the startup repair and still expire on November 26, 2026 UTC. These libraries are not claimed to be patched. Configuration, credentials, guest grants and connection state are preserved. No connection reset is required. Back up the App before updating; cold App backups stop it briefly and restart it afterward. Live Home Assistant restore acceptance remains for the owner to perform manually.
+Maintenance beta 0.1.151 raises the default maximum qURL lifetime from 3 days to 30 days. Explicitly configured limits and existing grants are preserved. Existing installations configured for 3 days can set `qurl_max_lifetime_days` to `30` and restart the App; LayerV account limits still apply. Both architecture images are validated before publishing those exact artifacts with SBOMs, provenance and Cosign signing. Complete vulnerability reports remain visible; the existing bounded security assessments retain their November 26, 2026 UTC expiry. These libraries are not claimed to be patched. Configuration, credentials and connection state are preserved. No connection reset is required. Back up the App before updating; cold App backups stop it briefly and restart it afterward. Live Home Assistant upgrade and external LayerV acceptance were not exercised for this change.
 
 Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release packages qURL CLI 3.6.0 with [LayerV](https://layerv.ai) Connector 0.14.2 and retains saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
@@ -220,7 +220,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.149`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.149 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.149).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.151`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.151 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.151).
 
 ## License and branding
 
