@@ -197,11 +197,13 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.158**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.159**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Release 0.1.158 shows **Delete schedule** beside **Edit** and **Pause/Resume** on every schedule. The confirmation identifies the selected schedule and explains that other schedules and retained history are unaffected, while already-issued invitations keep their original end time. **Revoke guest** remains the separate action for ending all current access and stopping all schedules for a guest. See [schedule management documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
+Release 0.1.159 adds advance delivery for scheduled guests. Choose **24 hours before** (the new-schedule default), **1 hour before**, or **When access starts**; one-time schedules also offer **Immediately after saving**. If the selected email time has passed, a highlighted notice explains that delivery is queued immediately after saving. The original access window remains unchanged. Existing schedules keep their prior delivery timing. See [schedule management documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
+
+Editing, pausing, or deleting a schedule cancels invitations whose access has not started. Active invitations keep their original end unless explicitly revoked. **Revoke guest** ends all current and future invitations for that guest. A fresh link is issued for each occurrence; delivery and access status are shown separately. Registered-account lifetime limits have not been live-tested for a 25-hour invitation; the anonymous account's separate one-day limit is not applied to registered schedules.
 
 Choose **Access now** or **Scheduled access** from **Add guest**. Scheduled invitations require SMTP and use your browser's local timezone by default, with a selector for other zones. Each window receives a fresh emailed qURL and ends at its original deadline, including open sessions.
 
@@ -224,7 +226,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.158`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.158 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.158).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.159`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.159 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.159).
 
 ## License and branding
 
