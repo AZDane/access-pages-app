@@ -197,11 +197,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.156**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.157**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Release 0.1.156 moves revoked scheduled guests into **Recently ended guests**, labeled **Revoked**, with expandable retained history. **Pause** keeps a guest in the scheduled list; explicitly resuming a revoked schedule returns it there. Revoked schedule/contact records expire after 30 days once occurrence retention and cleanup handoff finish. Earlier versions recorded guest revocation as Paused: after updating, click **Revoke guest** once more on those cards to move them to Recently ended guests. Existing intentional pauses are preserved. See [scheduling and history documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
+Release 0.1.157 makes guest form errors prominent with red messages and outlines around the entries needing attention. Closing a guest add/edit dialog warns only if its current values differ from the opened or successfully saved values. Untouched forms and reverted edits close silently; failed saves and schedule previews remain unsaved. Save requests temporarily prevent dismissal and editing. See [guest form documentation](access_pages/DOCS.md#guest-form-errors-and-unsaved-changes).
 
 Choose **Access now** or **Scheduled access** from **Add guest**. Scheduled invitations require SMTP and use your browser's local timezone by default, with a selector for other zones. Each window receives a fresh emailed qURL and ends at its original deadline, including open sessions.
 
@@ -224,7 +224,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.156`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.156 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.156).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.157`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.157 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.157).
 
 ## License and branding
 
