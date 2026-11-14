@@ -197,11 +197,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.152**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.153**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Release 0.1.152 adds [scheduled guest invitations](access_pages/DOCS.md#scheduled-guest-invitations) for installations with SMTP configured. Choose a one-time date or weekday recurrence, review the saved timezone, and receive a fresh emailed qURL for every access window. Local access, including open sessions, ends at the original deadline. Delivery retries reuse the same link; SMTP acceptance does not confirm inbox delivery. Existing manual guests and explicitly configured lifetime limits are preserved.
+Release 0.1.153 offers **Access now** or **Scheduled access** from **Add guest**. The scheduled guest form uses compact checkboxes, opens the calendar when clicking a date field, and defaults new schedules to your browser's local timezone with a selector for other zones. Saved schedules retain their timezone. [Scheduled invitations](access_pages/DOCS.md#scheduled-guest-invitations) require SMTP; each window receives a fresh emailed qURL and access ends at the original deadline, including open sessions.
 
 Schedules survive ordinary restarts and upgrades. Home Assistant cold backups exclude a scheduling authorization marker so restored schedules are blocked and their restored grants are revoked before guest services start. Review and resume future invitations after restoring; manual filesystem restores must omit the marker too. Back up the App before updating. No connection reset is required. Both architecture images are validated before publication with SBOMs, provenance and Cosign signing. Existing bounded security assessments retain their November 26, 2026 UTC expiry. Live appliance upgrade and external LayerV/SMTP acceptance were not exercised for this release.
 
@@ -222,7 +222,7 @@ Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → A
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.152`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.152 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.152).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.153`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.153 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.153).
 
 ## License and branding
 
