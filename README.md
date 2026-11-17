@@ -216,11 +216,13 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.162**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.163**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Release 0.1.162 defaults verification codes to unchecked for new scheduled guests and warns about unsaved entity and page edits. Existing verification choices are preserved; Apply selections keeps a draft until Save page succeeds. Advance delivery remains available for scheduled guests. Choose **24 hours before** (the new-schedule default), **1 hour before**, or **When access starts**; one-time schedules also offer **Immediately after saving**. If the selected email time has passed, a highlighted notice explains that delivery is queued immediately after saving. The original access window remains unchanged. Existing schedules keep their prior delivery timing. See [schedule management documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
+Release 0.1.163 updates the pinned Python 3.15.2 images and builds the guest endpoint with Go 1.27.4. It adds required browser, race, compatibility and image checks, with a documented runtime security reassessment. No settings migration or connection reset is required.
+
+Version 0.1.162 defaults verification codes to unchecked for new scheduled guests and warns about unsaved entity and page edits. Existing verification choices are preserved; Apply selections keeps a draft until Save page succeeds. Advance delivery remains available for scheduled guests. Choose **24 hours before** (the new-schedule default), **1 hour before**, or **When access starts**; one-time schedules also offer **Immediately after saving**. If the selected email time has passed, a highlighted notice explains that delivery is queued immediately after saving. The original access window remains unchanged. Existing schedules keep their prior delivery timing. See [schedule management documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
 
 Editing, pausing, or deleting a schedule cancels invitations whose access has not started. Active invitations keep their original end unless explicitly revoked. **Revoke guest** ends all current and future invitations for that guest. A fresh link is issued for each occurrence; delivery and access status are shown separately. Registered-account lifetime limits have not been live-tested for a 25-hour invitation; the anonymous account's separate one-day limit is not applied to registered schedules.
 
@@ -245,7 +247,7 @@ Use the [installation button or manual steps](#install-access-pages) to add the 
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.162`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.162 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.162).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.163`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.163 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.163).
 
 ## License and branding
 
