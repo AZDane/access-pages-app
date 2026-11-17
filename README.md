@@ -9,6 +9,25 @@ information, and controls they need. They do not need a Home Assistant
 account, password, or VPN access, and no inbound router port needs to be
 opened.
 
+## Install Access Pages
+
+[![Open in Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2FAZDane%2Faccess-pages-app)
+
+The button opens Home Assistant with the repository URL filled in. Confirm
+**Add**, then select **Access Pages → Install → Start → Open Web UI**.
+
+You need a Home Assistant installation that supports Apps, running on amd64
+or aarch64 hardware with Home Assistant Core 2026.10.4 or later. Remote guest
+access also requires a [LayerV account and dedicated API key](https://layerv.ai/qurl/dashboard/keys/).
+
+To add the repository manually, or if the button cannot reach your Home Assistant:
+
+1. Open **Settings → Apps → Install app** to enter the App store.
+2. Open the top-right menu and select **Repositories**.
+3. Add `https://github.com/AZDane/access-pages-app` and confirm **Add**.
+4. Select **Access Pages**, choose **Install**, then **Start** and **Open Web UI**.
+5. Complete **Connect to LayerV** using your dedicated API key.
+
 [Installation](access_pages/DOCS.md#installation) ·
 [LayerV setup](access_pages/DOCS.md#set-up-layerv) ·
 [Owner responsibility](#owner-responsibility) ·
@@ -209,7 +228,7 @@ Choose **Access now** or **Scheduled access** from **Add guest**. Scheduled invi
 
 Schedules survive ordinary restarts and upgrades. Home Assistant cold backups exclude a scheduling authorization marker so restored schedules are blocked and their restored grants are revoked before guest services start. Review and resume future invitations after restoring; manual filesystem restores must omit the marker too. Back up the App before updating. No connection reset is required. Both architecture images are validated before publication with SBOMs, provenance and Cosign signing. Existing bounded security assessments retain their November 26, 2026 UTC expiry. Live appliance upgrade and external LayerV/SMTP acceptance were not exercised for this release.
 
-Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release packages qURL CLI 3.6.0 with [LayerV](https://layerv.ai) Connector 0.14.2 and retains saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
+Existing saved pages and guest access remain intact. Before saving an existing page again, allow the domains it uses or remove those controls. This release packages qURL CLI 4.2.0 with [LayerV](https://layerv.ai) Connector 0.14.2 and retains saved Home Assistant settings, administrator configuration and Connector identity. No guest-link migration or automatic identity reset is introduced.
 
 Back up the App and stop the old version completely before updating through Home Assistant. Existing guest links have no compatibility guarantee; revoke unwanted guests through the normal controls, allow durable remote cleanup to finish, and create new invitations as needed. Do not delete the ownership lock or reset the account/Connector merely to upgrade. Follow the [installation and recovery instructions](access_pages/DOCS.md#security-update-in-app-01138).
 
@@ -219,7 +238,7 @@ The native **Temporary diagnostic capture request** option explains its one-shot
 
 Diagnostic output remains bounded. An unsampled request that hangs without a detected failure may leave no useful early-boundary evidence. See the [0.1.128 acceptance notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.128) and [operating documentation](access_pages/DOCS.md) for remaining acceptance checks and diagnostic limitations.
 
-Add `https://github.com/AZDane/access-pages-app` under **Settings → Apps → App store → Repositories** in Home Assistant, then install or update **Access Pages**. The App supports Home Assistant OS and Supervised installations on amd64 and aarch64.
+Use the [installation button or manual steps](#install-access-pages) to add the repository, then install or update **Access Pages** on an amd64 or aarch64 Home Assistant installation that supports Apps.
 
 - [Installation and operating documentation](access_pages/DOCS.md)
 - [App changelog](access_pages/CHANGELOG.md)
