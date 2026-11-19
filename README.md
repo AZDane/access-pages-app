@@ -216,11 +216,11 @@ See [DOCS.md](access_pages/DOCS.md) for complete setup and operating instruction
 
 ## Installation and current release
 
-This is the public Home Assistant App Store repository for **Access Pages 0.1.164**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
+This is the public Home Assistant App Store repository for **Access Pages 0.1.165**. Access Pages shares selected Home Assistant controls through expiring, revocable guest links using [LayerV](https://layerv.ai) qURL/NHP. [A LayerV account and dedicated management API key](https://layerv.ai/qurl/dashboard/keys/) are required.
 
 The default domains are `light,switch,fan,media_player,climate,vacuum,sensor`. Clear `include_domains` to allow all domains, subject to other configured filters and exclusions. Entity categories are configuration aids, not safety classifications; owners remain responsible for reviewing what each entity controls and how guest qURLs are shared.
 
-Release 0.1.164 moves to a smaller, verified hardened runtime, applies official upstream Python HTTP parsing and IMAP STARTTLS fixes, and adds independent advisory and runtime defect checks. Both architectures and Home Assistant Green were tested. Some dependency findings remain under documented applicability assessments requiring fresh review by November 26, 2026 UTC. No settings migration or connection reset is required.
+Release 0.1.165 closes the guest creation popup after confirming Finished Sharing and prevents the incorrect unsaved-changes warning. Failed requests keep sharing open for retry. It retains the hardened runtime, upstream Python security fixes and independent security checks from 0.1.164. Some dependency findings remain under documented applicability assessments requiring fresh review by November 26, 2026 UTC. No settings migration or connection reset is required.
 
 Version 0.1.162 defaults verification codes to unchecked for new scheduled guests and warns about unsaved entity and page edits. Existing verification choices are preserved; Apply selections keeps a draft until Save page succeeds. Advance delivery remains available for scheduled guests. Choose **24 hours before** (the new-schedule default), **1 hour before**, or **When access starts**; one-time schedules also offer **Immediately after saving**. If the selected email time has passed, a highlighted notice explains that delivery is queued immediately after saving. The original access window remains unchanged. Existing schedules keep their prior delivery timing. See [schedule management documentation](access_pages/DOCS.md#guest-cards-combined-history-and-retention).
 
@@ -247,7 +247,7 @@ Use the [installation button or manual steps](#install-access-pages) to add the 
 - [Application source](https://github.com/AZDane/access-pages)
 - [Private vulnerability reporting](https://github.com/AZDane/access-pages/security/advisories/new)
 
-The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.164`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.164 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.164).
+The App uses the versioned image `ghcr.io/azdane/access-pages-app:0.1.165`. This normal release also updates the latest image tags; existing versioned images remain available. See the [0.1.165 release notes](https://github.com/AZDane/access-pages/releases/tag/v0.1.165).
 
 ## License and branding
 
